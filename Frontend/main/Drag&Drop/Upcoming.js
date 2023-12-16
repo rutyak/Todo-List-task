@@ -6,7 +6,7 @@ function drag(ev) {
   
   async function todoDrop(ev) {
     try {
-      window.location.reload();
+    window.location.reload();
     var id = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(id));
     console.log("Droped in progress section");

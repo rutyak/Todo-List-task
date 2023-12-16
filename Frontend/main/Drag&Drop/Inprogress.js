@@ -67,8 +67,7 @@ async function progressDrop(ev) {
     ev.preventDefault();
     var id = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(id));
-    console.log("Droped in progress section");
-    console.log("id of droped item: ", id);
+    
     let updatedData = {
       stage: "In progress",
     };
