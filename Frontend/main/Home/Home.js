@@ -5,7 +5,6 @@ let dayOfMonth = ("0" + date.getDate()).slice(-2);
 
 let currYear = date.getFullYear();
 let currMonth = date.getMonth();
-const formContainer= document.querySelector('.form-container')
 let taskModule = document.querySelector(".todo-stage");
 let BASE_URL = "http://localhost:5000";
 

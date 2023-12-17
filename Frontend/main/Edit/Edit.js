@@ -1,29 +1,52 @@
 //--------------------------------------------Edit-functionality----------------------
 
-const form = document.getElementById("form");
 let edit = document.querySelector(".btn-submit-editedTask");
-const warn = document.getElementById("warning");
 let task = document.getElementById("task1");
 let desc = document.getElementById("desc1");
 let priority = document.getElementById("tasks-priority");
+const formContainer = document.querySelector('.form-container')
 let task2;
 let desc2;
+
+async function updatedTask() {
+  try{
+  const response = await fetch(`${BASE_URL}/updateTask/${id}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedData),
+  });
+
+  const newRes = await response.json();
+
+  if (response.ok) {
+    // Redirect after successful login
+    setTimeout(() => {
+      location.href = "../Home/Home.html";
+    }, 1000);
+  }
+  } catch (error) {
+      console.log("Error", error);
+  }
+}
+
 function handleEdit(id) {
   try {
     formContainer.classList.remove("hidden");
     formContainer.classList.add("visible");
-    
+
     data.forEach(ele => {
-      if(ele._id == id){
+      if (ele._id == id) {
         task2 = ele.task;
         desc2 = ele.description;
       }
-    }); 
+    });
     task.value = task2;
     desc.value = desc2;
 
   } catch (error) {
-      console.log(error);
+    console.log(error);
   }
 
 
@@ -45,24 +68,12 @@ function handleEdit(id) {
         dayOfMonth,
         priority,
       };
-      const response = await fetch(`${BASE_URL}/updateTask/${id}`, {
-        method: "put",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedData),
-      });
 
-      const newRes = await response.json();
+      updatedTask(updatedData, id);
 
-      if (response.ok) {
-        // Redirect after successful login
-        setTimeout(() => {
-          location.href = "../Home/Home.html";
-        }, 1000);
-      }
-    } catch (error) {
-      console.log("Error", error);
+    }catch(error){
+      console.log(error);
     }
-  }
 }
+}
+  module.exports = { updateTask, setFormValues };

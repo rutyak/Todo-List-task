@@ -1,13 +1,10 @@
-//-----------------------handle-form-close-----------------------
 
 function handleClose() {
     formContainer.classList.remove("visible");
     formContainer.classList.add("hidden");
-  }
+}
   
-//--------------------------------------task-form-------------------
-  
-  function handleTaskFrom() {
+function handleTaskFrom() {
     formContainer.classList.remove("hidden");
     formContainer.classList.add("visible");
     

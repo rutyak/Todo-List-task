@@ -140,7 +140,7 @@ app.put('/updateTask/:id', async (req, res) => {
       return res.status(404).json({ error: 'Task not found' });
     }
 
-    res.json(updatedTask);
+    res.status(204).json(updatedTask);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });

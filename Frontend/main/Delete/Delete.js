@@ -1,4 +1,3 @@
-// -----------------delete-functionality------------------
 
 async function deleteTask(id) {
     try {
