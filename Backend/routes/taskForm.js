@@ -3,11 +3,10 @@ const { Task } = require("../models/Task");
 const router = express.Router();
 
 router.post('/taskform', async (req, res) => {
-    const {task, desc, time, dayOfMonth, priority, stage, email} = req.body;
+    const {task, desc, time, dayOfMonth, priority, stage} = req.body;
   
     // creating new task object
     const newTask = new Task({ 
-      email,  //I need email I here so that I can sort user's task by email
       task,
       description: desc,
       time,

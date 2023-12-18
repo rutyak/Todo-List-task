@@ -11,7 +11,7 @@ const boilerPlate = (id, taskTitle, priority, description) => {
   const taskModule = createElement("div");
 };
 
-function filterTasks(search, data) {
+function filterTasks(search) {
 
   try {
     let count = 0;
