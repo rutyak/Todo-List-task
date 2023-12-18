@@ -10,8 +10,8 @@ async function login() {
     warn.innerHTML = `<div style="color: red"><p>Please fill in all fields</p></div>`;
     return;
   }
-
-  const response = await fetch("http://localhost:5000/login", {
+  try {
+    const response = await fetch("http://localhost:5000/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,4 +30,7 @@ async function login() {
   } else {
     warn.innerHTML = `<div style="color: red"><p>${data.message}</p></div>`;
   }
+  } catch (error) {
+    console.log(error);
+  } 
 }

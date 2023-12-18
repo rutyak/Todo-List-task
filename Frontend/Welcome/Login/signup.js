@@ -26,8 +26,8 @@ async function signup() {
       warn.innerHTML = `<div style="color: red"><p>Password must contain char greater than 6</p></div>`;
       return;
     }
-  
-    const response = await fetch("http://localhost:5000/signup", {
+    try {
+      const response = await fetch("http://localhost:5000/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,6 +51,10 @@ async function signup() {
     } else {
       warn.innerHTML = `<div style="color: red"><p>${data.message}</p></div>`;
     }
+    } catch (error) {
+      console.log(error);
+    }
+    
   }
   
 

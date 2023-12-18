@@ -8,7 +8,7 @@ const formContainer = document.querySelector('.form-container')
 let task2;
 let desc2;
 
-async function updatedTask() {
+async function updatedTask(updatedData, id) {
   try{
   const response = await fetch(`${BASE_URL}/updateTask/${id}`, {
     method: "put",
@@ -18,7 +18,7 @@ async function updatedTask() {
     body: JSON.stringify(updatedData),
   });
 
-  const newRes = await response.json();
+  // const newRes = await response.json();
 
   if (response.ok) {
     // Redirect after successful login
@@ -76,4 +76,3 @@ function handleEdit(id) {
     }
 }
 }
-  module.exports = { updateTask, setFormValues };
