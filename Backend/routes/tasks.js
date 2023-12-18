@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const {Task} = require("../models/Task");
 
-router.get('/tasks', async (req, res) => {
+router.get('/tasks/:currentuser', async (req, res) => {
+
+    const email = req.params.currentuser;
     try {
-      const { email } = req.body;
       const tasks = await Task.find({email}); // Fetch tasks for the specific user
       res.status(200).json(tasks);
     } catch (error) {

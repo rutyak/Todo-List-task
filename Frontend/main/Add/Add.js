@@ -1,4 +1,3 @@
-
 function handleClose() {
     formContainer.classList.remove("visible");
     formContainer.classList.add("hidden");
@@ -31,7 +30,7 @@ function handleTaskFrom() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({task, desc, time, dayOfMonth, priority, stage}),
+          body: JSON.stringify({task, desc, time, dayOfMonth, priority, stage,email:currentUser}),
         });
       
         const data = await response.json();

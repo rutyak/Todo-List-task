@@ -43,7 +43,7 @@ async function signup() {
       // Dispatch the custom event after successful signup
       const signupEvent = new CustomEvent("signupSuccess", { detail: { email } });
       document.dispatchEvent(signupEvent);
-  
+      localStorage.setItem("User",email);
       // Redirect after successful signup
       setTimeout(() => {
         location.href = "../../main/Home/Home.html";

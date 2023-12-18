@@ -24,6 +24,7 @@ async function login() {
   if (response.ok) {
     warn.innerHTML = `<div style="color: green"><p>${data.message}</p></div>`;
     // Redirect after successful login
+    localStorage.setItem("User",email);
     setTimeout(() => {
       location.href = "../../main/Home/Home.html";
     }, 2000);

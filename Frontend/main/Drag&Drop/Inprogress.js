@@ -6,7 +6,7 @@ const done = document.querySelector(".done-stage");
 async function displayPro() {
   try {
     try {
-      const response = await fetch(`${BASE_URL}/tasks`);
+      const response = await fetch(`${BASE_URL}/tasks/${currentUser}`);
       data = await response.json();
       console.log("data:", data);
     } catch (error) {

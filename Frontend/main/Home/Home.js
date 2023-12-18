@@ -1,3 +1,4 @@
+const currentUser=localStorage.getItem('User')
 const tasksCount = document.querySelector(".middle-section");
 let data;
 let date = new Date();
@@ -64,7 +65,7 @@ function render(value, entireInfo){
 
 async function todayTask() {
   try {
-    const response = await fetch(`${BASE_URL}/tasks`);
+    const response = await fetch(`${BASE_URL}/tasks/${currentUser}`);
     data = await response.json();
   } catch (error) {
     console.error("Error fetching data:", error);
