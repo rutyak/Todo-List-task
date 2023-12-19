@@ -15,7 +15,7 @@ async function updatedTask(updatedData, id) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(updatedData),
+    body: JSON.stringify(updatedData), // updated Data as a payload
   });
 
   // const newRes = await response.json();

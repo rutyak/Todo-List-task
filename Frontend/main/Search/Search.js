@@ -6,10 +6,6 @@ searchInput.addEventListener("input", function () {
   let search = searchInput.value.toLowerCase();
   filterTasks(search);
 });
-const createElement = (element) => document.createElement(element);
-const boilerPlate = (id, taskTitle, priority, description) => {
-  const taskModule = createElement("div");
-};
 
 function filterTasks(search) {
 

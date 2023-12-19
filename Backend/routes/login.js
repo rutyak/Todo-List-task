@@ -6,8 +6,7 @@ const {User} = require("../models/User");
 router.post('/login', async function(req, res) {
     try {
       const { email, password } = req.body;
-      console.log("Email",email);
-      console.log("Email",password);
+  
       // Find the user by username
       const user = await User.findOne({ email });
       

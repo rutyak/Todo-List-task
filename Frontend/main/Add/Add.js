@@ -30,7 +30,7 @@ function handleTaskFrom() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({task, desc, time, dayOfMonth, priority, stage,email:currentUser}),
+          body: JSON.stringify({task, desc, time, dayOfMonth, priority, stage,email:currentUser}), //payload
         });
       
         const data = await response.json();
