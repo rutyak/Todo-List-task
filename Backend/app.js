@@ -16,7 +16,7 @@ const updateTask = require("./routes/updateTask");
 const deleteTask = require("./routes/deleteTask");
 
 
-mongoose.connect('mongodb://localhost:27017/Users', {useUnifiedTopology: true} );
+mongoose.connect('mongodb+srv://rutikkhandekar:rutik123@todolist-clustor.yrghdby.mongodb.net/', {useUnifiedTopology: true} );
 
 
 app.use(login); // app.use() is use to mount middleware , login is middleware. it executes one by one
